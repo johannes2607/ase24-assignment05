@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.UUID;
 
 public interface UserService {
+    void clear();
     @NonNull
     User create(@NonNull User user);
     @NonNull

@@ -16,6 +16,11 @@ public class UserServiceImpl implements UserService {
     private final UserPersistenceService userPersistenceService;
 
     @Override
+    public void clear() {
+        userPersistenceService.clear();
+    }
+
+    @Override
     public User create(User user) {
         return userPersistenceService.upsert(user);
     }
