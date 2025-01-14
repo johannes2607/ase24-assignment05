@@ -18,8 +18,7 @@ public abstract class UserDtoMapper {
 
     @Mapping(target = "id", source = "id")
     @Mapping(target = "name", source = "name")
-    @Mapping(target = "createdAt", source = "createdAt")
-    //@Mapping(target = "createdAt", expression = "java(mapTimestamp(source.getCreatedAt()))")
+    @Mapping(target = "createdAt", expression = "java(mapTimestamp(source.getCreatedAt()))")
     public abstract User toBusiness(UserDto source);
 
     protected LocalDateTime mapTimestamp (LocalDateTime timestamp) {
