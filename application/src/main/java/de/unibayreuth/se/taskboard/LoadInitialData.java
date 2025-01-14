@@ -30,10 +30,10 @@ class LoadInitialData implements InitializingBean {
         log.info("Loading initial data...");
         //List<User> users = TestFixtures.createUsers(userService);
         List<Task> tasks = TestFixtures.createTasks(taskService);
-        Task task1 = tasks.getFirst();
+        Task task1 = tasks.get(0);
         //task1.setAssigneeId(users.getFirst().getId());
         taskService.upsert(task1);
-        Task task2 = tasks.getLast();
+        Task task2 = tasks.get(tasks.size() - 1);
         //task2.setAssigneeId(users.getLast().getId());
         taskService.upsert(task2);
     }
